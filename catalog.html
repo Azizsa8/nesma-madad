@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="scroll-smooth h-full" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nesma Madad | Design Catalog</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#006876",
+          "primary-container": "#008394",
+          "surface": "#121212",
+          "on-surface": "#fbf9f8",
+          "outline": "#6e797c",
+          "gold": "#C9A96E"
+        },
+        fontFamily: {
+          "display": ["Montserrat", "Cairo", "sans-serif"],
+          "body": ["Inter", "Cairo", "sans-serif"],
+          "arabic": ["Cairo", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  [dir="rtl"] { font-family: 'Cairo', sans-serif !important; }
+  [dir="rtl"] .font-display, [dir="rtl"] .font-body { font-family: 'Cairo', sans-serif !important; }
+  .slide { display: none; }
+  .slide.active { display: flex; }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface h-full overflow-hidden flex flex-col justify-between">
+
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
+  <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="/index.html" class="flex items-center gap-2">
+        <img src="logo-gold-v2.png" alt="Nesma Madad" class="h-10 w-10 object-contain"/>
+        <span class="font-display text-sm font-bold text-white tracking-wider uppercase" id="nav-title">Nesma Madad</span>
+      </a>
+      <span class="text-white/40">|</span>
+      <span class="text-gold font-semibold text-xs uppercase tracking-widest" id="catalog-subtitle">Corporate Catalog</span>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <button class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors" id="lang-toggle">
+        AR
+      </button>
+      <a href="/index.html" class="bg-white/10 hover:bg-white/20 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors" aria-label="Close catalog">
+        <span class="material-symbols-outlined">close</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel Main Viewport -->
+<div class="relative flex-1 w-full flex items-center justify-center mt-16 md:mt-0">
+  
+  <!-- Navigation Arrows -->
+  <button onclick="prevSlide()" class="absolute left-4 z-40 bg-black/50 hover:bg-black/80 border border-white/25 hover:border-white/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer">
+    <span class="material-symbols-outlined">west</span>
+  </button>
+  <button onclick="nextSlide()" class="absolute right-4 z-40 bg-black/50 hover:bg-black/80 border border-white/25 hover:border-white/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer">
+    <span class="material-symbols-outlined">east</span>
+  </button>
+
+  <!-- Slider Wrapper -->
+  <div class="w-full h-full" id="slides-container">
+    <!-- Slides will be inserted dynamically by JS -->
+  </div>
+
+</div>
+
+<!-- Bottom Control & Details Panel -->
+<div class="bg-black/80 backdrop-blur-md border-t border-white/10 py-6 px-6 z-40">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- Left: Page Index -->
+    <div class="text-white/60 font-semibold text-sm">
+      <span id="current-slide-num" class="text-white text-base">01</span> / <span class="text-white/40">20</span>
+    </div>
+    
+    <!-- Center: Spec Details -->
+    <div class="text-center md:text-left flex-1 px-8 max-w-2xl">
+      <h2 id="item-title" class="font-display text-xl font-bold text-white mb-1">Corporate Module Desk</h2>
+      <p id="item-desc" class="text-xs text-white/70">Solid oak wood top with brushed brass drawer linings and low-VOC matte varnish.</p>
+    </div>
+
+    <!-- Right: Action Call -->
+    <div class="flex items-center gap-4">
+      <a href="/index.html#contact" class="bg-gold text-black hover:bg-white hover:text-black transition-all px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
+        <span data-lang="en">Inquire About Spec</span>
+        <span data-lang="ar">استفسر عن المواصفات</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Catalog definitions
+const catalogData = {
+  corporate: {
+    title: { en: "Corporate Catalog", ar: "كتالوج الشركات" },
+    items: [
+      {
+        image: "assets/catalog/corporate_1.jpg",
+        title: { en: "Executive Bespoke Mahogany Desk", ar: "مكتب تنفيذي مخصص من الماهوجني" },
+        desc: { en: "Handcrafted mahogany executive desk featuring premium brass inlays, integrated cable management hubs, and hand-polished oil finishes.", ar: "مكتب تنفيذي مصنوع يدوياً من خشب الماهوجني يتميز بلمسات نحاسية فاخرة ومنظم أسلاك مدمج." }
+      },
+      {
+        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=80",
+        title: { en: "Minimalist Workspace Station", ar: "محطة عمل مكتبية بسيطة" },
+        desc: { en: "Ergonomic modular workstation constructed with sustainable white oak veneer and powder-coated steel legs.", ar: "محطة عمل مريحة قابلة للتعديل مصنوعة من قشرة البلوط الأبيض المستدامة وأرجل فولاذية." }
+      },
+      {
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80",
+        title: { en: "Executive Boardroom Table", ar: "طاولة اجتماعات تنفيذية" },
+        desc: { en: "Grand oval walnut conference table, seating up to 16. Equipped with custom flush-mount power modules.", ar: "طاولة مؤتمرات بيضاوية ضخمة من خشب الجوز تتسع لـ 16 شخصاً مع منافذ طاقة مدمجة." }
+      },
+      {
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=80",
+        title: { en: "Acoustic Focus Meeting Room", ar: "غرفة اجتماعات عازلة للصوت" },
+        desc: { en: "Bespoke sound-isolated glass enclosure with matching oak trim and modular fabric acoustical panels.", ar: "كابينة زجاجية معزولة صوتياً مع تشطيبات من خشب البلوط وألواح صوتية قماشية." }
+      },
+      {
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=80",
+        title: { en: "Collaborative Bench System", ar: "نظام طاولات تعاوني" },
+        desc: { en: "Spacious benching configuration designed for teamwork, featuring integrated felt privacy screens.", ar: "طاولات عمل واسعة مصممة للعمل الجماعي مع حواجز خصوصية من اللباد المدمج." }
+      },
+      // Generate 15 more placeholder items to make it a total of 20
+      ...Array.from({ length: 15 }, (_, i) => ({
+        image: `https://images.unsplash.com/photo-${[
+          "1531971589569-0d9370cbe1e5", "1531403009284-440f080d1e12", "1486406146926-c627a92ad1ab",
+          "1497366754035-f200968a6e72", "1497215842964-222b430dc094", "1542744094-3a31f103e35f",
+          "1527192491265-7e15c55b1ed2", "1497366811353-6870744d04b2", "1513694203232-719a280e022f",
+          "1585412727339-54e4bae3bbf9", "1507537297725-24a1c029d3ca", "1507679799987-c73779587ccf",
+          "1522071820081-009f0129c71c", "1519389950473-47ba0277781c", "1556761175-4b46a572b786"
+        ][i % 15]}?w=1600&q=80`,
+        title: { en: `Premium Corporate Unit ${i + 6}`, ar: `وحدة مكتبية فاخرة ${i + 6}` },
+        desc: { en: "Designed with precise ergonomics, structural durability, and customized matching materials.", ar: "مصمم بأسلوب مريح هندسياً ومتانة هيكلية عالية ومواد متناسقة." }
+      }))
+    ]
+  },
+  hospitality: {
+    title: { en: "Hospitality Catalog", ar: "كتالوج الضيافة" },
+    items: [
+      {
+        image: "assets/catalog/hospitality_1.jpg",
+        title: { en: "Lobby Reception Desk", ar: "طاولة استقبال البهو الفاخر" },
+        desc: { en: "Bespoke lobby desk detailed with gold-veined white marble panels and gold-finished brushed steel frames.", ar: "طاولة استقبال للبهو الفاخر تتميز بألواح رخامية بيضاء ذات عروق ذهبية وإطار معدني ذهبي." }
+      },
+      ...Array.from({ length: 19 }, (_, i) => ({
+        image: `https://images.unsplash.com/photo-${[
+          "1566073771259-6a8506099945", "1582719478250-c89cae4db85b", "1540518614846-7eded433c457",
+          "1564507592937-25994a9015b2", "1578683010236-d716f9a3f461", "1520250497591-112f2f40a3f4",
+          "1551882547-ff40c63fe5fa", "1584132967334-10e028bd69f7", "1618773928121-c32242e63f39",
+          "1611891487122-2075b96244e1", "1606046604972-77cc76aee944", "1590490360182-c33d57733427",
+          "1591088398332-8a7791972843", "1631049307264-da0ec9d70304", "1517840901100-8179e982acb7"
+        ][i % 15]}?w=1600&q=80`,
+        title: { en: `Luxury Lounge Element ${i + 2}`, ar: `عنصر صالون فاخر ${i + 2}` },
+        desc: { en: "Bespoke hospitality seating and interior cabinetry tailored to deliver luxury hotel standard comforts.", ar: "مقاعد ضيافة مخصصة وخزائن داخلية مصممة لتوفير أقصى درجات الراحة في الفنادق الفاخرة." }
+      }))
+    ]
+  },
+  dining: {
+    title: { en: "Fine Dining Catalog", ar: "كتالوج المطاعم الفاخرة" },
+    items: Array.from({ length: 20 }, (_, i) => ({
+      image: `https://images.unsplash.com/photo-${[
+        "1517248135467-4c7edcad34c4", "1550966871-3ed3cdb5ed0c", "1559339352-11d035aa65de",
+        "1543007630-9710e4a00a20", "1555396273-367ea4eb4db5", "1514933651103-005eec06c04b",
+        "1414235077428-338989a2e8c0", "1574966739982-f67828779ac6", "1554118811-1e0d58224f24",
+        "1502301197279-6e9f52fdfefe", "1600565193348-f74bd3c7ccdf", "1614850523459-c2f4c699c52e",
+        "1551183053-bf91a1d81141", "1537047902294-62a40c20a6ae", "1485182708500-e8f1f318ba72"
+      ][i % 15]}?w=1600&q=80`,
+      title: { en: `Fine Dining Suite ${i + 1}`, ar: `مجموعة المطاعم الفاخرة ${i + 1}` },
+      desc: { en: "Sophisticated wooden dining tables, plush leather booths and luxury display units.", ar: "طاولات طعام خشبية راقية، كبائن جلدية فخمة ووحدات عرض فاخرة." }
+    }))
+  },
+  cafes: {
+    title: { en: "Cafes & Casual", ar: "كتالوج المقاهي" },
+    items: Array.from({ length: 20 }, (_, i) => ({
+      image: `https://images.unsplash.com/photo-${[
+        "1554118811-1e0d58224f24", "1501339847302-ac426a4a7cbb", "1495474472287-4d71bcdd2085",
+        "1445116572660-236099ec97a0", "1525610553991-2bede1a236e2", "1559925393-8be0ec4767c8",
+        "1511920170033-f8396924c348", "1521017432531-fbd92d768814", "1507133750040-4a8f57021571",
+        "1508766917616-d22f3f1eea14", "1541167760496-1628856ab772", "1498804103079-a6351b050096",
+        "1559925393-8be0ec4767c8", "1485182708500-e8f1f318ba72", "1517248135467-4c7edcad34c4"
+      ][i % 15]}?w=1600&q=80`,
+      title: { en: `Cafe & Casual Module ${i + 1}`, ar: `مجموعات المقاهي ${i + 1}` },
+      desc: { en: "Durable and stylish dining tables, stools and modular counters designed for high traffic and aesthetic spaces.", ar: "طاولات متينة وأنيقة وكراسي مرتفعة وطاولات خدمة مصممة للمقاهي والمساحات النشطة." }
+    }))
+  }
+};
+
+let currentCategory = "corporate";
+let currentIdx = 0;
+let currentLang = "en";
+
+// Parse category from URL
+const urlParams = new URLSearchParams(window.location.search);
+const categoryParam = urlParams.get('category');
+if (categoryParam && catalogData[categoryParam]) {
+  currentCategory = categoryParam;
+}
+
+// Persist language or check localStorage
+if (localStorage.getItem('preferredLanguage')) {
+  currentLang = localStorage.getItem('preferredLanguage');
+} else if (document.documentElement.dir === 'rtl' || navigator.language.startsWith('ar')) {
+  currentLang = 'ar';
+}
+
+function updateLangUI() {
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  
+  // Update category title in nav
+  document.getElementById('catalog-subtitle').textContent = catalogData[currentCategory].title[currentLang];
+  
+  // Set current lang display elements
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    const lang = el.getAttribute('data-lang');
+    el.style.display = lang === currentLang ? 'inline' : 'none';
+  });
+
+  updateSlideDetails();
+}
+
+function initSlider() {
+  const container = document.getElementById('slides-container');
+  container.innerHTML = '';
+  
+  const items = catalogData[currentCategory].items;
+  items.forEach((item, idx) => {
+    const slide = document.createElement('div');
+    slide.className = `slide absolute inset-0 w-full h-full justify-center items-center ${idx === currentIdx ? 'active' : ''}`;
+    slide.innerHTML = `
+      <img src="${item.image}" alt="${item.title[currentLang]}" class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out select-none"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+    `;
+    container.appendChild(slide);
+  });
+  
+  updateSlideDetails();
+}
+
+function updateSlideDetails() {
+  const item = catalogData[currentCategory].items[currentIdx];
+  document.getElementById('current-slide-num').textContent = String(currentIdx + 1).padStart(2, '0');
+  document.getElementById('item-title').textContent = item.title[currentLang];
+  document.getElementById('item-desc').textContent = item.desc[currentLang];
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll('.slide');
+  slides[currentIdx].classList.remove('active');
+  currentIdx = (currentIdx + 1) % slides.length;
+  slides[currentIdx].classList.add('active');
+  updateSlideDetails();
+}
+
+function prevSlide() {
+  const slides = document.querySelectorAll('.slide');
+  slides[currentIdx].classList.remove('active');
+  currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+  slides[currentIdx].classList.add('active');
+  updateSlideDetails();
+}
+
+// Keyboards bindings
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') {
+    if (currentLang === 'ar') prevSlide(); else nextSlide();
+  } else if (e.key === 'ArrowLeft') {
+    if (currentLang === 'ar') nextSlide(); else prevSlide();
+  } else if (e.key === 'Escape') {
+    window.location.href = '/index.html';
+  }
+});
+
+// Toggle Language
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  localStorage.setItem('preferredLanguage', currentLang);
+  updateLangUI();
+});
+
+// Init
+updateLangUI();
+initSlider();
+</script>
+
+</body>
+</html>

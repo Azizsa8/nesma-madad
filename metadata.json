@@ -1,0 +1,6 @@
+{
+  "name": "AMIRA Cleaning Services",
+  "description": "Professional, reliable, and high-quality cleaning services for homes and businesses in Saudi Arabia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

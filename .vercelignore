@@ -1,0 +1,19 @@
+# Ignore everything except the static website files and assets
+node_modules
+src
+amira-cleaning-services
+amira-cleaning-services-extracted
+Tecra_Company_Profile
+*.zip
+*.pdf
+scratch
+.git
+.env
+.env.example
+vite.config.ts
+tsconfig.json
+package.json
+package-lock.json
+*.md
+metadata.json
+*screenshot*

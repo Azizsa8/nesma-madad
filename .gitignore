@@ -1,0 +1,28 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+.vercel
+
+# Ignore other projects in the same workspace
+/amira-cleaning-services/
+/amira-cleaning-services-extracted/
+/Tecra_Company_Profile/
+/Render Tecra PDF to page images/
+
+# Ignore large media/binary files globally
+*.pdf
+*.zip
+*.png
+*.jpg
+*.jpeg
+
+# Explicitly allow required assets
+!/catalogs/*.pdf
+!/assets/
+!/assets/**/*
