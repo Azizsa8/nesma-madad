@@ -1267,11 +1267,9 @@ ul { list-style: none; }
   .site-nav:not(.scrolled) .nav-link {
     color: var(--charcoal) !important;
   }
-  .nav-links .btn-pill {
-    display: none;
-  }
-  .site-nav > .nav-inner > .btn-pill {
-    display: none;
+  .site-nav .btn-pill,
+  .site-nav .btn {
+    display: none !important;
   }
 
   /* Hero */
