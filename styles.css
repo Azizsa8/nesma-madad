@@ -1534,3 +1534,61 @@ html[dir="rtl"] .form-select {
   }
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   CATALOGUE CARD BANNER & COVER PREVIEW STYLES
+══════════════════════════════════════════════════════════════════ */
+.catalogue-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.catalogue-banner-card {
+  background: linear-gradient(135deg, #0E3A44 0%, #092B33 50%, #051C22 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.catalogue-card-link:hover .catalogue-banner-card {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(0, 188, 212, 0.2);
+  border-color: rgba(0, 188, 212, 0.4);
+}
+
+.catalogue-cover-preview {
+  width: 240px !important;
+  height: 300px !important;
+  max-width: 100% !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 12px !important;
+  padding: 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  flex-shrink: 0 !important;
+}
+
+.catalogue-cover-preview img {
+  height: 28px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+html[dir="rtl"] .catalogue-banner-card {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .catalogue-banner-content {
+  text-align: right;
+}
+
+
