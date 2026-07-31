@@ -82,21 +82,31 @@
       'contact-label': 'Get In Touch',
       'contact-headline': 'Ready to furnish<br />your space?',
       'contact-sub': "Tell us about your project — we'll come back to you within two business days.",
+      'contact-quote-title': 'Request Proposal',
+      'contact-quote-desc': 'Complete the form and our team will prepare a tailored proposal for your project.',
+      'contact-consult-title': 'Book Consultation',
+      'contact-consult-desc': 'Prefer to speak with a project advisor? Book a 30-minute consultation with our team.',
+      'contact-consult-btn': 'Book Consultation',
+      'contact-details-label': 'Contact Details',
+      'contact-phones-label': 'Phone Numbers',
+      'contact-email-label': 'Email Address',
+      'contact-website-label': 'Website',
+      'contact-social-label': 'Social Media Accounts',
       'form-name-label': 'Full Name',
       'form-name-placeholder': 'Your full name',
       'form-email-label': 'Email Address',
       'form-email-placeholder': 'your@email.com',
       'form-project-label': 'Project Type',
-      'form-project-placeholder': 'Select a category',
+      'form-project-placeholder': 'Select category',
       'form-opt-corp': 'Corporate & Executive Offices',
       'form-opt-cafes': 'Cafes & Casual Dining',
       'form-opt-fine': 'Fine Dining & Restaurants',
       'form-opt-hosp': 'Hospitality & Lounges',
       'form-opt-other': 'Other / Multi-category',
-      'form-msg-label': 'Project Brief',
+      'form-msg-label': 'Project Details',
       'form-msg-placeholder': 'Tell us about your space, timeline, and requirements…',
-      'form-submit': 'Send Request',
-      'form-email-direct': 'Or email us directly:',
+      'form-submit': 'Send Request via WhatsApp',
+      'form-email-direct': 'Or email us directly at:',
       'cta-1-title': 'Request Proposal',
       'cta-1-desc': 'Complete the form and our team will prepare a tailored proposal for your project.',
       'cta-2-title': 'Book Consultation',
@@ -114,13 +124,16 @@
       'nav-catalogue': 'الكتالوج',
       'nav-materials': 'المواد والحرفية',
       'nav-sustainability': 'الاستدامة',
+      'nav-[#about]': 'عن الشركة',
+      'nav-[#principles]': 'عن الشركة',
       'nav-about': 'عن الشركة',
+      'nav-principles': 'مبادؤنا',
       'nav-contact': 'اتصل بنا',
       'nav-proposal': 'طلب عرض سعر',
       'hero-kicker': 'أثاث وتجهيزات مخصصة للضيافة والشركات',
-      'hero-headline': 'أثاث وبيئات ضيافة<br class="br-desk" /> صُمّمت حسب الطلب.',
-      'hero-sub': 'مُصنّعة للمكاتب التنفيذية، ومساحات المطاعم، ووجهات الضيافة في كافة أنحاء المنطقة. كل تفصيل مدروس بعناية من البداية.',
-      'hero-btn-catalogue': 'استعرض الكتالوج',
+      'hero-headline': 'بيئات الأثاث والضيافة،<br class="br-desk" /> صُنِعت حسب الطلب.',
+      'hero-sub': 'مُصمّمة خصيصاً للمكاتب التنفيذية، المطاعم، ووجهات الضيافة في كافة أنحاء المنطقة. كل تفصيل، مدروس من البداية.',
+      'hero-btn-catalogue': 'تصفح الكتالوج',
       'hero-btn-materials': 'استكشف المواد',
       'cat-label': 'كتالوج المنتجات',
       'cat-headline': 'اكتشف إبداعاتنا المخصصة',
@@ -180,10 +193,20 @@
       'contact-label': 'تواصل معنا',
       'contact-headline': 'هل أنت جاهز لتجهيز<br />مساحتك؟',
       'contact-sub': 'أخبرنا عن تفاصيل مشروعك — وسنتواصل معك خلال يومي عمل.',
+      'contact-quote-title': 'طلب عرض سعر',
+      'contact-quote-desc': 'أكمل النموذج وسيقوم فريقنا بإعداد عرض سعر مخصص لمشروعك.',
+      'contact-consult-title': 'حجز استشارة',
+      'contact-consult-desc': 'تفضل التحدث مع مستشار المشاريع؟ احجز استشارة لمدة ٣٠ دقيقة مع فريقنا.',
+      'contact-consult-btn': 'حجز استشارة',
+      'contact-details-label': 'تفاصيل الاتصال',
+      'contact-phones-label': 'أرقام التواصل',
+      'contact-email-label': 'البريد الإلكتروني',
+      'contact-website-label': 'الموقع الإلكتروني',
+      'contact-social-label': 'حسابات التواصل الاجتماعي',
       'form-name-label': 'الاسم الكامل',
-      'form-name-placeholder': 'اسمك الكامل',
+      'form-name-placeholder': 'الاسم الكامل',
       'form-email-label': 'البريد الإلكتروني',
-      'form-email-placeholder': 'name@example.com',
+      'form-email-placeholder': 'your@email.com',
       'form-project-label': 'نوع المشروع',
       'form-project-placeholder': 'اختر الفئة',
       'form-opt-corp': 'المكاتب التنفيذية والشركات',
@@ -403,16 +426,21 @@
   }
 
 
-  /* ─── Contact form — front-end only validation + UX ────────── */
+  /* ─── Contact form — Route directly to WhatsApp ────────────────── */
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const submitBtn = form.querySelector('[type="submit"]');
-      const name  = form.querySelector('#name').value.trim();
-      const email = form.querySelector('#email').value.trim();
-      const msg   = form.querySelector('#message').value.trim();
+      const nameInput = form.querySelector('#name');
+      const emailInput = form.querySelector('#email');
+      const projectSelect = form.querySelector('#project-type');
+      const msgInput = form.querySelector('#message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const projectType = (projectSelect && projectSelect.selectedIndex >= 0) ? projectSelect.options[projectSelect.selectedIndex].text : '';
+      const msg = msgInput ? msgInput.value.trim() : '';
 
       const isAr = currentLang === 'ar';
 
@@ -428,17 +456,27 @@
         return;
       }
 
-      // Simulate success state
-      const successBtnText = isAr ? 'تم إرسال الطلب ✓' : 'Request Sent ✓';
-      const successFormMsg = isAr ? 'شكراً لك! وسنتواصل معك خلال يومي عمل.' : "Thank you! We'll be in touch within two business days.";
+      // Format WhatsApp Message
+      const waMessage = isAr
+        ? `*طلب جديد عبر الموقع — نسمة مدد*\n\n` +
+          `*الاسم:* ${name}\n` +
+          `*البريد الإلكتروني:* ${email}\n` +
+          `*نوع المشروع:* ${projectType}\n` +
+          `*تفاصيل المشروع:* ${msg}`
+        : `*New Project Request — Nesma Madad*\n\n` +
+          `*Name:* ${name}\n` +
+          `*Email:* ${email}\n` +
+          `*Project Type:* ${projectType}\n` +
+          `*Details:* ${msg}`;
 
-      submitBtn.textContent = successBtnText;
-      submitBtn.disabled = true;
-      submitBtn.style.background = '#0E3A44';
-      submitBtn.style.borderColor = '#0E3A44';
-      submitBtn.style.color = '#fff';
+      const encodedText = encodeURIComponent(waMessage);
+      const whatsappUrl = `https://wa.me/966503044146?text=${encodedText}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappUrl, '_blank');
+
+      const successFormMsg = isAr ? 'جارٍ تحويلك إلى واتساب لطلب عرض السعر... ✓' : 'Redirecting to WhatsApp to send your request... ✓';
       showFormMessage(form, successFormMsg, 'success');
-      form.reset();
     });
   }
 
