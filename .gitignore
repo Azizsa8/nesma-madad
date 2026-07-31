@@ -24,5 +24,6 @@ coverage/
 
 # Explicitly allow required assets
 !/catalogs/*.pdf
+!NSM001.pdf
 !/assets/
 !/assets/**/*
