@@ -4,35 +4,43 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nesma Madad — Bespoke Furniture &amp; Hospitality Solutions</title>
-  <meta name="description" content="Nesma Madad crafts bespoke furniture and fit-out environments for corporate offices, fine dining, cafes, and hospitality venues across the region." />
+  <title data-i18n="doc-title">Nesma Madad — Bespoke Furniture &amp; Hospitality Solutions</title>
+  <meta name="description" data-i18n="doc-desc" content="Nesma Madad crafts bespoke furniture and fit-out environments for corporate offices, fine dining, cafes, and hospitality venues across the region." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <a href="#hero" class="skip-link">Skip to main content</a>
+  <a href="#hero" class="skip-link" data-i18n="skip-link">Skip to main content</a>
 
   <!-- ═══════════════════════════════════════
        NAV
   ═══════════════════════════════════════ -->
   <header class="site-nav" id="site-nav" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
-      <a href="#hero" class="nav-logo" aria-label="Nesma Madad — Home">
+      <a href="#hero" class="nav-logo" aria-label="Nesma Madad — Home" data-i18n-aria="nav-logo-aria">
         <img src="assets/logo.png?v=12" alt="Nesma Madad logo" class="logo-img" />
       </a>
 
       <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#catalogue" class="nav-link">Catalogue</a></li>
-        <li><a href="#materials" class="nav-link">Materials</a></li>
-        <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#catalogue" class="nav-link" data-i18n="nav-catalogue">Catalogue</a></li>
+        <li><a href="#materials" class="nav-link" data-i18n="nav-materials">Materials</a></li>
+        <li><a href="#sustainability" class="nav-link" data-i18n="nav-sustainability">Sustainability</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav-about">About</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="btn btn-pill" aria-label="Request a proposal">Request Proposal</a>
+      <div class="nav-actions">
+        <div class="lang-switcher" id="lang-switcher" aria-label="Language selector">
+          <button type="button" class="lang-btn active" data-lang-btn="en" aria-label="Switch to English">EN</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn" data-lang-btn="ar" aria-label="التحويل إلى العربية">العربية</button>
+        </div>
+
+        <a href="#contact" class="btn btn-pill" data-i18n="nav-proposal" aria-label="Request a proposal">Request Proposal</a>
+      </div>
 
       <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -52,13 +60,13 @@
         <div class="hero-image-overlay" aria-hidden="true"></div>
       </div>
       <div class="hero-content reveal">
-        <p class="kicker">Bespoke Furniture &amp; Hospitality</p>
-        <h1 class="hero-headline">Furniture &amp;&nbsp;hospitality environments,<br class="br-desk" /> made to order.</h1>
+        <p class="kicker" data-i18n="hero-kicker">Bespoke Furniture &amp; Hospitality</p>
+        <h1 class="hero-headline" data-i18n="hero-headline">Furniture &amp;&nbsp;hospitality environments,<br class="br-desk" /> made to order.</h1>
         <div class="hero-rule" aria-hidden="true"></div>
-        <p class="hero-sub">Crafted for corporate offices, dining spaces, and hospitality venues across the region. Every detail, considered from the start.</p>
+        <p class="hero-sub" data-i18n="hero-sub">Crafted for corporate offices, dining spaces, and hospitality venues across the region. Every detail, considered from the start.</p>
         <div class="hero-ctas">
-          <a href="#catalogue" class="btn btn-primary">View Catalogue</a>
-          <a href="#materials" class="btn btn-ghost-light">Explore Materials</a>
+          <a href="#catalogue" class="btn btn-primary" data-i18n="hero-btn-catalogue">View Catalogue</a>
+          <a href="#materials" class="btn btn-ghost-light" data-i18n="hero-btn-materials">Explore Materials</a>
         </div>
       </div>
     </section>
@@ -70,10 +78,10 @@
     <section class="catalogue-section py-24 bg-white" id="catalogue" aria-label="Our Catalogue">
       <div class="container">
         <div class="section-header reveal mb-16 text-center">
-          <p class="label-caps">Our Catalogue</p>
-          <h2 class="section-headline">Explore Our Bespoke Creations</h2>
+          <p class="label-caps" data-i18n="cat-label">Our Catalogue</p>
+          <h2 class="section-headline" data-i18n="cat-headline">Explore Our Bespoke Creations</h2>
           <div class="hairline-rule-h max-w-[120px] mx-auto" aria-hidden="true"></div>
-          <p class="materials-intro mx-auto text-center" style="max-w: 600px;">
+          <p class="materials-intro mx-auto text-center" style="max-w: 600px;" data-i18n="cat-intro">
             Browse our comprehensive digital brochure showcasing our custom office systems, fine dining concepts, and luxury lounge environments.
           </p>
         </div>
@@ -83,7 +91,7 @@
         </div>
 
         <div class="text-center mt-12 reveal">
-          <a href="NSM001.pdf" download="Nesma_Madad_Catalogue.pdf" class="btn btn-primary px-8 py-3.5">
+          <a href="NSM001.pdf" download="Nesma_Madad_Catalogue.pdf" class="btn btn-primary px-8 py-3.5" data-i18n="cat-download">
             Download Full Catalogue
           </a>
         </div>
@@ -97,11 +105,11 @@
     <section class="materials" id="materials" aria-label="Material Library">
       <div class="container">
         <div class="section-header reveal">
-          <p class="label-caps">Materials &amp; Craftsmanship</p>
-          <h2 class="section-headline">Every finish. Every fibre.<br />Every detail considered.</h2>
+          <p class="label-caps" data-i18n="mat-label">Materials &amp; Craftsmanship</p>
+          <h2 class="section-headline" data-i18n="mat-headline">Every finish. Every fibre.<br />Every detail considered.</h2>
         </div>
 
-        <p class="materials-intro reveal">Our material library spans premium wood veneers, fine upholstery, and precision hardware — each selected for tactile quality, longevity, and responsible sourcing.</p>
+        <p class="materials-intro reveal" data-i18n="mat-intro">Our material library spans premium wood veneers, fine upholstery, and precision hardware — each selected for tactile quality, longevity, and responsible sourcing.</p>
 
         <div class="materials-grid">
 
@@ -110,8 +118,8 @@
               <img src="assets/materials/wood.jpg?v=12" alt="Close-up of oak wood veneer grain" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Oak Veneer</span>
-              <span class="material-badge">FSC-Certified</span>
+              <span class="material-label" data-i18n="mat-1-title">Oak Veneer</span>
+              <span class="material-badge" data-i18n="mat-1-badge">FSC-Certified</span>
             </figcaption>
           </figure>
 
@@ -120,8 +128,8 @@
               <img src="assets/materials/leather.jpg?v=12" alt="Close-up of aniline leather surface texture" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Aniline Leather</span>
-              <span class="material-badge">Recycled Content</span>
+              <span class="material-label" data-i18n="mat-2-title">Aniline Leather</span>
+              <span class="material-badge" data-i18n="mat-2-badge">Recycled Content</span>
             </figcaption>
           </figure>
 
@@ -130,8 +138,8 @@
               <img src="assets/materials/matte-steel.jpg?v=12" alt="Close-up of matte black powder-coated steel" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Powder-Coated Steel</span>
-              <span class="material-badge">Low-VOC</span>
+              <span class="material-label" data-i18n="mat-3-title">Powder-Coated Steel</span>
+              <span class="material-badge" data-i18n="mat-3-badge">Low-VOC</span>
             </figcaption>
           </figure>
 
@@ -140,8 +148,8 @@
               <img src="assets/materials/brass-chrome.jpg?v=12" alt="Close-up of brushed brass hardware" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Brushed Brass</span>
-              <span class="material-badge">Premium Finish</span>
+              <span class="material-label" data-i18n="mat-4-title">Brushed Brass</span>
+              <span class="material-badge" data-i18n="mat-4-badge">Premium Finish</span>
             </figcaption>
           </figure>
 
@@ -150,8 +158,8 @@
               <img src="assets/materials/boucle.jpg?v=12" alt="Close-up of wool boucle textile texture" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Wool Boucle</span>
-              <span class="material-badge">Recycled Content</span>
+              <span class="material-label" data-i18n="mat-5-title">Wool Boucle</span>
+              <span class="material-badge" data-i18n="mat-5-badge">Recycled Content</span>
             </figcaption>
           </figure>
 
@@ -160,8 +168,8 @@
               <img src="assets/materials/marble.jpg?v=12" alt="Close-up of Carrara marble surface" loading="lazy" />
             </div>
             <figcaption>
-              <span class="material-label">Carrara Marble</span>
-              <span class="material-badge">FSC-Certified</span>
+              <span class="material-label" data-i18n="mat-6-title">Carrara Marble</span>
+              <span class="material-badge" data-i18n="mat-6-badge">FSC-Certified</span>
             </figcaption>
           </figure>
 
@@ -176,8 +184,8 @@
       <div class="sustainability-gradient" aria-hidden="true"></div>
       <div class="container sustainability-inner">
         <div class="section-header reveal">
-          <p class="label-caps light">Our Commitment</p>
-          <h2 class="section-headline light">Responsible materials.<br />Responsible futures.</h2>
+          <p class="label-caps light" data-i18n="sust-label">Our Commitment</p>
+          <h2 class="section-headline light" data-i18n="sust-headline">Responsible materials.<br />Responsible futures.</h2>
         </div>
 
         <div class="sustainability-pillars">
@@ -190,8 +198,8 @@
                 <path d="M18 14V18L21 20" stroke="#00BCD4" stroke-width="1.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="pillar-heading">FSC-Certified Sourcing</h3>
-            <p class="pillar-body">All wood-based materials are sourced from responsibly managed forests, certified to FSC standards.</p>
+            <h3 class="pillar-heading" data-i18n="sust-p1-title">FSC-Certified Sourcing</h3>
+            <p class="pillar-body" data-i18n="sust-p1-body">All wood-based materials are sourced from responsibly managed forests, certified to FSC standards.</p>
           </div>
 
           <div class="pillar-divider" aria-hidden="true"></div>
@@ -204,8 +212,8 @@
                 <path d="M18 11V25" stroke="#00BCD4" stroke-width="1.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="pillar-heading">Recycled Content Fibres</h3>
-            <p class="pillar-body">Upholstery programmes incorporate recycled and low-impact fibres without compromising tactile quality or durability.</p>
+            <h3 class="pillar-heading" data-i18n="sust-p2-title">Recycled Content Fibres</h3>
+            <p class="pillar-body" data-i18n="sust-p2-body">Upholstery programmes incorporate recycled and low-impact fibres without compromising tactile quality or durability.</p>
           </div>
 
           <div class="pillar-divider" aria-hidden="true"></div>
@@ -218,24 +226,24 @@
                 <path d="M14 21H22" stroke="#00BCD4" stroke-width="1.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="pillar-heading">Low-VOC Finishes</h3>
-            <p class="pillar-body">Our lacquers, stains, and topcoats are low or zero-VOC, protecting both interior air quality and the wider environment.</p>
+            <h3 class="pillar-heading" data-i18n="sust-p3-title">Low-VOC Finishes</h3>
+            <p class="pillar-body" data-i18n="sust-p3-body">Our lacquers, stains, and topcoats are low or zero-VOC, protecting both interior air quality and the wider environment.</p>
           </div>
 
         </div>
 
         <div class="sustainability-stats reveal">
           <div class="stat-chip">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">FSC-Certified Wood Supply</span>
+            <span class="stat-num" data-i18n="sust-stat1-num">100%</span>
+            <span class="stat-label" data-i18n="sust-stat1-label">FSC-Certified Wood Supply</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-num">30%+</span>
-            <span class="stat-label">Recycled Fibre Content</span>
+            <span class="stat-num" data-i18n="sust-stat2-num">30%+</span>
+            <span class="stat-label" data-i18n="sust-stat2-label">Recycled Fibre Content</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-num">Zero</span>
-            <span class="stat-label">High-VOC Finish Products</span>
+            <span class="stat-num" data-i18n="sust-stat3-num">Zero</span>
+            <span class="stat-label" data-i18n="sust-stat3-label">High-VOC Finish Products</span>
           </div>
         </div>
       </div>
@@ -248,19 +256,19 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-text reveal">
-            <p class="label-caps">About Nesma Madad</p>
-            <h2 class="section-headline">Bespoke furniture &amp; fit-out, built for the region.</h2>
+            <p class="label-caps" data-i18n="about-label">About Nesma Madad</p>
+            <h2 class="section-headline" data-i18n="about-headline">Bespoke furniture &amp; fit-out, built for the region.</h2>
             <div class="hairline-rule-h" aria-hidden="true"></div>
-            <p class="about-body">We are a precision furniture and fit-out partner for corporate, hospitality, and dining clients across the region. Our team works directly with architecture and design practices to develop and manufacture furniture that is genuinely bespoke — not adapted from a catalogue, but conceived for your space, your brief, and your guests.</p>
-            <p class="about-body">From executive environments to intimate fine-dining rooms, every project enters our studio as a brief and leaves as a crafted environment.</p>
-            <a href="#contact" class="btn btn-primary" style="margin-top: 2rem; display:inline-block;">Work With Us</a>
+            <p class="about-body" data-i18n="about-body1">We are a precision furniture and fit-out partner for corporate, hospitality, and dining clients across the region. Our team works directly with architecture and design practices to develop and manufacture furniture that is genuinely bespoke — not adapted from a catalogue, but conceived for your space, your brief, and your guests.</p>
+            <p class="about-body" data-i18n="about-body2">From executive environments to intimate fine-dining rooms, every project enters our studio as a brief and leaves as a crafted environment.</p>
+            <a href="#contact" class="btn btn-primary" style="margin-top: 2rem; display:inline-block;" data-i18n="about-btn">Work With Us</a>
           </div>
           <div class="about-gradient-accent" aria-hidden="true"></div>
         </div>
 
         <div class="values-header reveal">
           <div class="hairline-rule-h" aria-hidden="true"></div>
-          <p class="label-caps" style="margin-top: 2.5rem;">Our Principles</p>
+          <p class="label-caps" style="margin-top: 2.5rem;" data-i18n="principles-label">Our Principles</p>
         </div>
 
         <div class="values-row">
@@ -272,8 +280,8 @@
                 <path d="M7 14L11 18L21 10" stroke="#00BCD4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="value-title">Tailored Solutions</h3>
-            <p class="value-desc">Every project is unique. We design and build to your brief, not from a catalogue.</p>
+            <h3 class="value-title" data-i18n="val-1-title">Tailored Solutions</h3>
+            <p class="value-desc" data-i18n="val-1-desc">Every project is unique. We design and build to your brief, not from a catalogue.</p>
           </div>
 
           <div class="value-divider" aria-hidden="true"></div>
@@ -286,8 +294,8 @@
                 <circle cx="14" cy="14" r="2" fill="#00BCD4"/>
               </svg>
             </div>
-            <h3 class="value-title">Superior Quality</h3>
-            <p class="value-desc">Precision manufacturing and premium materials — visible in every joint, surface, and edge.</p>
+            <h3 class="value-title" data-i18n="val-2-title">Superior Quality</h3>
+            <p class="value-desc" data-i18n="val-2-desc">Precision manufacturing and premium materials — visible in every joint, surface, and edge.</p>
           </div>
 
           <div class="value-divider" aria-hidden="true"></div>
@@ -299,8 +307,8 @@
                 <path d="M10 14L13 17L18 11" stroke="#00BCD4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="value-title">Expert Guidance</h3>
-            <p class="value-desc">Our team brings deep sector knowledge to every consultation — from spec through to installation.</p>
+            <h3 class="value-title" data-i18n="val-3-title">Expert Guidance</h3>
+            <p class="value-desc" data-i18n="val-3-desc">Our team brings deep sector knowledge to every consultation — from spec through to installation.</p>
           </div>
 
           <div class="value-divider" aria-hidden="true"></div>
@@ -312,8 +320,8 @@
                 <path d="M14 4V14L20 17" stroke="#00BCD4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="value-title">Efficient Delivery</h3>
-            <p class="value-desc">Streamlined project management, transparent timelines, and on-time delivery as standard.</p>
+            <h3 class="value-title" data-i18n="val-4-title">Efficient Delivery</h3>
+            <p class="value-desc" data-i18n="val-4-desc">Streamlined project management, transparent timelines, and on-time delivery as standard.</p>
           </div>
 
           <div class="value-divider" aria-hidden="true"></div>
@@ -326,8 +334,8 @@
                 <path d="M9 14L13 18L21 10" stroke="#00BCD4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="value-title">Client Commitment</h3>
-            <p class="value-desc">Long-term partnerships, responsive support, and aftercare that matches the quality of our products.</p>
+            <h3 class="value-title" data-i18n="val-5-title">Client Commitment</h3>
+            <p class="value-desc" data-i18n="val-5-desc">Long-term partnerships, responsive support, and aftercare that matches the quality of our products.</p>
           </div>
 
         </div>
@@ -341,40 +349,40 @@
       <div class="contact-gradient" aria-hidden="true"></div>
       <div class="container contact-inner">
         <div class="contact-header reveal">
-          <p class="label-caps light">Get In Touch</p>
-          <h2 class="section-headline light">Ready to furnish<br />your space?</h2>
-          <p class="contact-sub">Tell us about your project — we'll come back to you within two business days.</p>
+          <p class="label-caps light" data-i18n="contact-label">Get In Touch</p>
+          <h2 class="section-headline light" data-i18n="contact-headline">Ready to furnish<br />your space?</h2>
+          <p class="contact-sub" data-i18n="contact-sub">Tell us about your project — we'll come back to you within two business days.</p>
         </div>
 
         <div class="contact-layout">
           <div class="contact-form-wrap reveal">
             <form class="contact-form" action="#" method="post" novalidate aria-label="Contact form">
               <div class="form-group">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" autocomplete="name" required aria-required="true" />
+                <label for="name" class="form-label" data-i18n="form-name-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" data-i18n-ph="form-name-placeholder" autocomplete="name" required aria-required="true" />
               </div>
               <div class="form-group">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" required aria-required="true" />
+                <label for="email" class="form-label" data-i18n="form-email-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" data-i18n-ph="form-email-placeholder" autocomplete="email" required aria-required="true" />
               </div>
               <div class="form-group">
-                <label for="project-type" class="form-label">Project Type</label>
+                <label for="project-type" class="form-label" data-i18n="form-project-label">Project Type</label>
                 <select id="project-type" name="project-type" class="form-input form-select" required aria-required="true">
-                  <option value="" disabled selected>Select a category</option>
-                  <option value="corporate">Corporate &amp; Executive Offices</option>
-                  <option value="cafes">Cafes &amp; Casual Dining</option>
-                  <option value="finedining">Fine Dining &amp; Restaurants</option>
-                  <option value="hospitality">Hospitality &amp; Lounges</option>
-                  <option value="other">Other / Multi-category</option>
+                  <option value="" disabled selected data-i18n="form-project-placeholder">Select a category</option>
+                  <option value="corporate" data-i18n="form-opt-corp">Corporate &amp; Executive Offices</option>
+                  <option value="cafes" data-i18n="form-opt-cafes">Cafes &amp; Casual Dining</option>
+                  <option value="finedining" data-i18n="form-opt-fine">Fine Dining &amp; Restaurants</option>
+                  <option value="hospitality" data-i18n="form-opt-hosp">Hospitality &amp; Lounges</option>
+                  <option value="other" data-i18n="form-opt-other">Other / Multi-category</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="message" class="form-label">Project Brief</label>
-                <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your space, timeline, and requirements…" rows="5" required aria-required="true"></textarea>
+                <label for="message" class="form-label" data-i18n="form-msg-label">Project Brief</label>
+                <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your space, timeline, and requirements…" data-i18n-ph="form-msg-placeholder" rows="5" required aria-required="true"></textarea>
               </div>
               <div class="form-actions">
-                <button type="submit" class="btn btn-primary full-width">Send Request</button>
-                <p class="form-note">Or email us directly: <a href="mailto:hello@nesma-madad.com" class="form-email-link">hello@nesma-madad.com</a></p>
+                <button type="submit" class="btn btn-primary full-width" data-i18n="form-submit">Send Request</button>
+                <p class="form-note"><span data-i18n="form-email-direct">Or email us directly:</span> <a href="mailto:hello@nesma-madad.com" class="form-email-link">hello@nesma-madad.com</a></p>
               </div>
             </form>
           </div>
@@ -382,19 +390,19 @@
           <div class="contact-info reveal">
             <div class="contact-details">
               <div class="contact-cta-block">
-                <h3 class="contact-cta-heading">Request Proposal</h3>
-                <p class="contact-cta-desc">Complete the form and our team will prepare a tailored proposal for your project.</p>
+                <h3 class="contact-cta-heading" data-i18n="cta-1-title">Request Proposal</h3>
+                <p class="contact-cta-desc" data-i18n="cta-1-desc">Complete the form and our team will prepare a tailored proposal for your project.</p>
                 <a href="mailto:hello@nesma-madad.com" class="btn btn-primary">hello@nesma-madad.com</a>
               </div>
               <div class="hairline-rule-h" aria-hidden="true" style="border-color: rgba(255,255,255,0.15); margin: 2rem 0;"></div>
               <div class="contact-cta-block">
-                <h3 class="contact-cta-heading">Book Consultation</h3>
-                <p class="contact-cta-desc">Prefer to speak with a project advisor? Book a 30-minute consultation with our team.</p>
-                <a href="mailto:hello@nesma-madad.com?subject=Consultation%20Request" class="btn btn-ghost-light">Book Consultation</a>
+                <h3 class="contact-cta-heading" data-i18n="cta-2-title">Book Consultation</h3>
+                <p class="contact-cta-desc" data-i18n="cta-2-desc">Prefer to speak with a project advisor? Book a 30-minute consultation with our team.</p>
+                <a href="mailto:hello@nesma-madad.com?subject=Consultation%20Request" class="btn btn-ghost-light" data-i18n="cta-2-btn">Book Consultation</a>
               </div>
               <div class="hairline-rule-h" aria-hidden="true" style="border-color: rgba(255,255,255,0.15); margin: 2rem 0;"></div>
               <address class="contact-address">
-                <p class="label-caps light" style="font-size: 0.65rem; margin-bottom: 0.75rem;">Contact Details</p>
+                <p class="label-caps light" style="font-size: 0.65rem; margin-bottom: 0.75rem;" data-i18n="details-label">Contact Details</p>
                 <p>hello@nesma-madad.com</p>
                 <p>nesma-madad.com</p>
               </address>
@@ -413,20 +421,20 @@
     <div class="footer-rule" aria-hidden="true"></div>
     <div class="container footer-inner">
       <div class="footer-left">
-        <a href="#hero" aria-label="Nesma Madad — Back to top">
+        <a href="#hero" aria-label="Nesma Madad — Back to top" data-i18n-aria="footer-logo-aria">
           <img src="assets/logo.png?v=12" alt="Nesma Madad" class="footer-logo" />
         </a>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#catalogue" class="footer-nav-link">Catalogue</a>
-        <a href="#materials" class="footer-nav-link">Materials</a>
-        <a href="#sustainability" class="footer-nav-link">Sustainability</a>
-        <a href="#about" class="footer-nav-link">About</a>
-        <a href="#contact" class="footer-nav-link">Contact</a>
+        <a href="#catalogue" class="footer-nav-link" data-i18n="nav-catalogue">Catalogue</a>
+        <a href="#materials" class="footer-nav-link" data-i18n="nav-materials">Materials</a>
+        <a href="#sustainability" class="footer-nav-link" data-i18n="nav-sustainability">Sustainability</a>
+        <a href="#about" class="footer-nav-link" data-i18n="nav-about">About</a>
+        <a href="#contact" class="footer-nav-link" data-i18n="nav-contact">Contact</a>
       </nav>
       <div class="footer-right">
         <a href="https://nesma-madad.com" class="footer-url" aria-label="nesma-madad.com website">nesma-madad.com</a>
-        <p class="footer-copy">&copy; 2025 Nesma Madad. All rights reserved.</p>
+        <p class="footer-copy" data-i18n="footer-copy">&copy; 2025 Nesma Madad. All rights reserved.</p>
       </div>
     </div>
   </footer>

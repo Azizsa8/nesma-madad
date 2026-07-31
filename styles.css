@@ -1408,3 +1408,129 @@ ul { list-style: none; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   LANGUAGE SWITCHER & RTL STYLES
+══════════════════════════════════════════════════════════════════ */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  padding: 3px 6px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-nav.scrolled .lang-switcher {
+  background: rgba(14, 58, 68, 0.6);
+  border-color: rgba(0, 188, 212, 0.25);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  line-height: 1.2;
+}
+
+.lang-btn:hover {
+  color: #ffffff;
+}
+
+.lang-btn.active {
+  background: var(--turquoise, #00bcd4);
+  color: #0E3A44;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.35);
+}
+
+.lang-divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.7rem;
+  user-select: none;
+}
+
+/* RTL Global Adjustments */
+html[dir="rtl"] {
+  font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .kicker,
+html[dir="rtl"] .label-caps,
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .btn,
+html[dir="rtl"] .form-label,
+html[dir="rtl"] .material-label,
+html[dir="rtl"] .pillar-heading,
+html[dir="rtl"] .value-title,
+html[dir="rtl"] .contact-cta-heading {
+  font-family: 'Tajawal', 'Cairo', sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+html[dir="rtl"] .lang-btn[data-lang-btn="ar"] {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 700;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-header:not(.text-center),
+html[dir="rtl"] .about-text,
+html[dir="rtl"] .contact-header,
+html[dir="rtl"] .contact-form,
+html[dir="rtl"] .contact-info,
+html[dir="rtl"] .contact-details {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-sub,
+html[dir="rtl"] .materials-intro,
+html[dir="rtl"] .pillar-body,
+html[dir="rtl"] .value-desc,
+html[dir="rtl"] .about-body,
+html[dir="rtl"] .contact-sub,
+html[dir="rtl"] .contact-cta-desc {
+  line-height: 1.85;
+}
+
+html[dir="rtl"] .form-input,
+html[dir="rtl"] .form-textarea,
+html[dir="rtl"] .form-select {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .form-select {
+  background-position: left 1rem center;
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    margin-right: 0.5rem;
+  }
+  html[dir="rtl"] .nav-actions {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+}
+
