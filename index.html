@@ -73,56 +73,56 @@
 
 
     <!-- ═══════════════════════════════════════
-         CATALOGUE
+         CATALOGUE SECTION (EXPLICIT STYLING)
     ═══════════════════════════════════════ -->
-    <section class="catalogue-section py-24 bg-white" id="catalogue" aria-label="Our Catalogue">
-      <div class="container">
-        <div class="section-header reveal mb-16 text-center">
-          <p class="label-caps" data-i18n="cat-label">Our Catalogue</p>
+    <section class="catalogue-section-custom" id="catalogue" aria-label="Our Catalogue">
+      <div class="catalogue-container">
+        <div class="catalogue-header reveal">
+          <span class="label-caps" data-i18n="cat-label">Our Catalogue</span>
           <h2 class="section-headline" data-i18n="cat-headline">Explore Our Bespoke Creations</h2>
-          <div class="hairline-rule-h max-w-[120px] mx-auto" aria-hidden="true"></div>
-          <p class="materials-intro mx-auto text-center" style="max-w: 600px;" data-i18n="cat-intro">
+          <div class="catalogue-hairline" aria-hidden="true"></div>
+          <p class="catalogue-intro-text" data-i18n="cat-intro">
             Browse our comprehensive digital brochure showcasing our custom office systems, fine dining concepts, and luxury lounge environments.
           </p>
         </div>
         
-        <!-- Clickable Catalogue Card Section Routing to PDF -->
-        <a href="NSM001.pdf" target="_blank" class="catalogue-card-link block reveal group mb-12" aria-label="Open Full PDF Catalogue">
-          <div class="catalogue-banner-card shadow-lift rounded-2xl overflow-hidden border border-gray-200 bg-gradient-to-br from-[#0E3A44] via-[#092B33] to-[#051C22] text-white p-8 md:p-12 relative flex flex-col md:flex-row items-center justify-between gap-8 cursor-pointer transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl">
-            <div class="catalogue-banner-content max-w-xl z-10">
-              <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#00bcd4]/20 text-[#00bcd4] border border-[#00bcd4]/30 mb-4" data-i18n="cat-badge">Official 2026 Collection</span>
-              <h3 class="text-3xl md:text-4xl font-light mb-4 text-white" data-i18n="cat-card-title">Nesma Madad Digital Catalogue</h3>
-              <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" data-i18n="cat-card-desc">Click anywhere on this section to open our complete bespoke brochure directly in PDF format, featuring our full lineup of executive offices, hospitality venues, and custom joinery.</p>
-              <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#00bcd4] text-[#0E3A44] font-semibold text-sm group-hover:bg-[#33d6ea] transition-all" data-i18n="cat-card-action">
+        <!-- Clickable Catalogue Banner Card Routing to PDF -->
+        <a href="NSM001.pdf" target="_blank" class="catalogue-card-wrapper reveal" aria-label="Open Full PDF Catalogue">
+          <div class="catalogue-banner-box">
+            <div class="catalogue-banner-text">
+              <span class="catalogue-badge-tag" data-i18n="cat-badge">Official 2026 Collection</span>
+              <h3 class="catalogue-banner-title" data-i18n="cat-card-title">Nesma Madad Digital Catalogue</h3>
+              <p class="catalogue-banner-desc" data-i18n="cat-card-desc">Click anywhere on this section to open our complete bespoke brochure directly in PDF format, featuring our full lineup of executive offices, hospitality venues, and custom joinery.</p>
+              <div class="catalogue-banner-action-btn" data-i18n="cat-card-action">
                 Open Catalogue PDF ↗
               </div>
             </div>
-            <div class="catalogue-cover-preview z-10 flex-shrink-0 w-full md:w-64 h-80 rounded-xl overflow-hidden shadow-2xl border border-white/15 relative bg-black/40 flex flex-col justify-between p-6 backdrop-blur-md">
-              <div class="flex justify-between items-center">
-                <img src="assets/logo.png?v=12" alt="Nesma Madad" class="h-6 object-contain" />
-                <span class="text-[10px] uppercase text-gray-400 tracking-widest">PDF • 83MB</span>
+            <div class="catalogue-preview-box">
+              <div class="catalogue-preview-top">
+                <img src="assets/logo.png?v=12" alt="Nesma Madad" class="catalogue-preview-logo" />
+                <span class="catalogue-preview-tag">PDF • 7.4MB</span>
               </div>
-              <div class="my-auto text-center">
-                <span class="text-xs uppercase text-[#00bcd4] tracking-widest font-semibold block mb-1">Bespoke Portfolio</span>
-                <span class="text-xl font-light text-white block tracking-wide">NESMA MADAD</span>
+              <div class="catalogue-preview-center">
+                <span class="catalogue-preview-sub">Bespoke Portfolio</span>
+                <span class="catalogue-preview-brand">NESMA MADAD</span>
               </div>
-              <div class="text-center pt-3 border-t border-white/10">
-                <span class="text-[11px] text-gray-300 block font-medium" data-i18n="cat-click-hint">Click to Open PDF ↗</span>
+              <div class="catalogue-preview-bottom">
+                <span data-i18n="cat-click-hint">Click to Open PDF ↗</span>
               </div>
             </div>
           </div>
         </a>
 
-        <!-- Embedded Interactive Viewer -->
-        <div class="catalogue-viewer-wrap reveal shadow-lift rounded-2xl overflow-hidden border border-gray-100 bg-[#f8f9fa] relative" style="height: clamp(500px, 80vh, 1000px);">
-          <iframe src="NSM001.pdf#toolbar=0" class="w-full h-full border-none" title="Nesma Madad Catalogue Viewer"></iframe>
+        <!-- Embedded Interactive PDF Viewer -->
+        <div class="catalogue-iframe-wrap reveal">
+          <iframe src="NSM001.pdf#toolbar=0" title="Nesma Madad Catalogue Viewer"></iframe>
         </div>
 
-        <div class="flex flex-wrap justify-center items-center gap-4 mt-8 reveal">
+        <div class="catalogue-actions-row reveal">
           <a href="NSM001.pdf" target="_blank" class="btn btn-primary px-8 py-3.5" data-i18n="cat-btn-open">
             Open Catalogue PDF ↗
           </a>
-          <a href="NSM001.pdf" download="Nesma_Madad_Catalogue.pdf" class="btn btn-ghost-dark px-8 py-3.5" data-i18n="cat-download">
+          <a href="NSM001.pdf" download="Nesma_Madad_Company_Profile.pdf" class="btn btn-ghost-dark px-8 py-3.5" data-i18n="cat-download">
             Download Full Catalogue
           </a>
         </div>
