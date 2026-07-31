@@ -5,7 +5,6 @@ amira-cleaning-services
 amira-cleaning-services-extracted
 Tecra_Company_Profile
 *.zip
-*.pdf
 scratch
 .git
 .env
